@@ -1,0 +1,62 @@
+{
+  "project_name": "NextGen Mobile Banking Platform (India) - PRF v2",
+  "business_owner": "Head - Retail Banking",
+  "requesting_department": "Retail Banking - Digital Channels",
+  "data_classification": "restricted",
+  "customer_data_involved": true,
+  "data_types": [
+    "PII",
+    "KYC documents",
+    "Account data",
+    "Transaction data",
+    "Device identifiers",
+    "Biometric authentication metadata (non-template)",
+    "Payment instrument data (PCI scope where applicable)",
+    "Behavioral analytics"
+  ],
+  "hosting_model": "cloud",
+  "cloud_provider": "AWS",
+  "data_residency_required": true,
+  "vendor_involvement": true,
+  "vendors": [
+    {
+      "name": "BBPS Aggregator Partner",
+      "service_description": "Bill payment routing and reconciliation services for BBPS categories",
+      "data_shared": true,
+      "country_of_processing": "India"
+    },
+    {
+      "name": "SMS/Email Notification Provider",
+      "service_description": "OTP delivery and transaction alert notifications",
+      "data_shared": true,
+      "country_of_processing": "India"
+    },
+    {
+      "name": "AppShield / Mobile App Protection Vendor",
+      "service_description": "RASP, root/jailbreak detection, tamper protection, anti-debugging",
+      "data_shared": false,
+      "country_of_processing": "India"
+    }
+  ],
+  "budget_usd": 1050000,
+  "expected_go_live_date": "2026-10-01",
+  "regulatory_impact": "high",
+  "regulatory_regimes": [
+    "RBI - Digital Payments / IT Governance",
+    "DPDP Act (India)",
+    "PCI DSS (card payments)",
+    "Information Technology Act / CERT-In Directions"
+  ],
+  "security_assessment_status": "in_progress",
+  "pen_test_required": true,
+  "aml_relevance": true,
+  "customer_impact": "Customer-facing mobile banking app for Android/iOS. Supports onboarding/eKYC where applicable, UPI payments (send/receive/collect), UPI Autopay mandates, IMPS/NEFT/RTGS transfers, BBPS bill payments, FASTag recharge, debit/credit card controls, alerts (SMS/email/push), grievance redressal and dispute initiation. High availability required due to 24x7 payments and customer servicing.",
+  "sdlc_controls_in_place": true,
+  "genai_component": true,
+  "genai_use_cases": [
+    "Customer support chatbot for service requests and FAQs",
+    "Fraud/transaction anomaly triage assistance (human-in-the-loop)",
+    "Internal incident response summarization and runbook guidance"
+  ],
+  "additional_context": "Architecture: Mobile app (Android/iOS) -> API Gateway -> microservices (Kubernetes) -> integrations with Core Banking, CRM, UPI switch, IMPS/NEFT/RTGS rails, AML transaction monitoring, fraud monitoring engine, BBPS aggregator, notification gateways. Authentication: OAuth2/OIDC with JWT, device binding, biometric login, step-up MFA for high-risk actions. APIs include beneficiary management, payment initiation, mandate management, bill payment and recharge. Internet-facing entry points include API Gateway and mobile app endpoints; WAF and DDoS protection planned. Data protection: TLS 1.3 in transit, AES-256 at rest via KMS/HSM; secrets managed by KMS/Secrets Manager; centralized logging to SIEM with retention >= 10 years for audit logs. Compliance: Payment data storage/processing restricted to India regions; cross-border transfer not in scope except potential vendor support access via controlled JIT and logging. Controls: Mandatory code review, protected branches, CI/CD approvals, change management/CAB with SoD, rollback plans, daily backups and quarterly DR drills. Security testing: SAST/DAST/SCA in CI, pre-go-live VAPT, annual pen test, mobile app security testing, threat modeling. AML: sanctions screening for onboarding and payments, velocity/structuring controls, STR/SAR workflow owned by AML Compliance Officer, audit logging immutable. Customer protection: grievance redressal workflow with SLAs and escalation. Evidence artifacts intended: architecture diagrams, data flow maps, threat model, test reports, VAPT report, vendor due diligence, CAB approvals, DR drill reports, SIEM onboarding confirmation, access review reports.\n\nExecutive Summary:\n1. The NextGen Mobile Banking Platform (India) - PRF v2 project review reveals several areas of concern across AML, Compliance, Legal, IT Security, Data Governance, and Governance domains.\n2. The project's AML domain requires immediate attention with critical findings such as the lack of defined KYC/CDD workflow, risk-based customer classification, periodic KYC refresh triggers, transaction monitoring threshold logic, structuring detection controls, real-time sanctions screening, and beneficiary screening mechanisms.\n3. Compliance domain findings include missing governance approvals, IT risk assessments, change management processes, and vendor due diligence procedures.\n4. Legal domain issues involve undefined contract types, governing law/jurisdiction clauses, indemnity clauses, limitation of liability caps, IP ownership/licensing, incident reporting obligations, and regulatory reporting ownership.\n5. IT Security domain findings include missing RBAC models, user provisioning workflows, timely user deactivation processes, formal change request processes, centralized logging, daily log review processes, incident escalation matrices, system monitoring alerts, automated backups, backup testing schedules, and RTO/RPO definitions.\n6. Data Governance domain findings include the absence of data owners and stewards, data lineage mapping, data quality validation controls, data retention and archival policy, lawful basis for processing customer data, payment data localization clarity, anonymization controls for training on production data, consent capture mechanisms, data breach notification workflows, data inventory/asset registers, and metadata repository.\n7. Approval recommendation is \"REJECT\" due to the critical level of residual risk (86%) and numerous findings across multiple domains.\n8. Mandatory remediation includes assessing RBI notification/approval obligations, assigning data owner and data steward roles, centralizing logs, clarifying IP ownership/licensing, confirming payment data localization in India, creating data inventory including datasets, lineage/data flow maps, defining CAB/approver roles, defining LoL cap and carve-outs, defining RBAC/ABAC and access review cadence, defining RBI incident reporting workflow, defining RBI-aligned KYC workflow, defining VAPT scope, timeline, remediation tracking, and ensuring completion prior to go-live.\n9. Additional mandatory remediation includes defining end-to-end KYC/CDD workflow, periodic privileged access review, real-time sanctions screening with deterministic match thresholds, anonymization controls for training on production data, consent capture, breach notification process, centralized logging, formal change request process, and defining RTO/RPO targets.\n10. Evidence references: policy_example_aml.txt, policy_example_privacy.txt."
+}

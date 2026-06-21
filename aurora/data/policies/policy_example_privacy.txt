@@ -1,0 +1,14 @@
+POLICY: Data Protection & Privacy Standard (Example)
+
+A. Personal data processing requires:
+   - Lawful basis/consent where applicable.
+   - Data minimization and purpose limitation.
+   - Retention schedule aligned to regulatory requirements.
+
+B. Cross-border transfers:
+   - Require approved transfer mechanism and vendor DPA.
+   - Must document country of processing and storage.
+
+C. Logging:
+   - Avoid logging full PII in application logs.
+   - Implement access monitoring for sensitive data.

@@ -1,0 +1,42 @@
+{
+  "project_name": "Retail Mobile Onboarding Modernization",
+  "business_owner": "Head of Digital Channels",
+  "requesting_department": "Retail Banking",
+
+  "data_classification": "confidential",
+  "customer_data_involved": true,
+  "data_types": ["PII", "KYC", "Account", "Device metadata"],
+
+  "hosting_model": "cloud",
+  "cloud_provider": "AWS",
+  "data_residency_required": true,
+
+  "vendor_involvement": true,
+  "vendors": [
+    {
+      "name": "Acme Identity Inc.",
+      "service_description": "Document verification and liveness detection SDK",
+      "data_shared": true,
+      "country_of_processing": "IN"
+    }
+  ],
+
+  "budget_usd": 850000,
+  "expected_go_live_date": "2026-06-30",
+
+  "regulatory_impact": "high",
+  "regulatory_regimes": ["GDPR", "Local Banking Circular XYZ", "PCI DSS"],
+
+  "security_assessment_status": "in_progress",
+  "pen_test_required": true,
+
+  "aml_relevance": true,
+  "customer_impact": "Impacts retail mobile onboarding flow, KYC capture, and account opening approvals.",
+
+  "sdlc_controls_in_place": false,
+
+  "genai_component": true,
+  "genai_use_cases": ["Customer support summarization", "Developer assistant for internal code generation"],
+
+  "additional_context": "Project will integrate with core banking APIs and customer master systems; rollout in phased migration."
+}

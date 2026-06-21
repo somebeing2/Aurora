@@ -1,0 +1,229 @@
+{
+  "project_metadata": {
+    "project_name": "NextGen Mobile Banking Platform",
+    "project_code": "MB-2026-01",
+    "project_type": "Enterprise Mobile Banking Application",
+    "sponsor": "Head - Retail Banking",
+    "business_owner": "Head - Retail Banking",
+    "technology_owner": "Chief Information Officer",
+    "risk_owner": "Chief Risk Officer",
+    "compliance_owner": "Chief Compliance Officer",
+    "information_security_owner": "CISO",
+    "execution_mode": "Full SDLC with Audit Oversight",
+    "proposed_start_date": "2026-01-01",
+    "proposed_go_live": "2026-10-01",
+    "regulatory_impact": true,
+    "board_approval_required": true
+  },
+
+  "business_case": {
+    "problem_statement": "Increase digital adoption, reduce branch dependency, and enhance customer engagement while maintaining regulatory compliance.",
+    "strategic_alignment": [
+      "Digital Transformation Strategy",
+      "Cost Optimization Program",
+      "Customer Experience Enhancement",
+      "Financial Inclusion Initiative"
+    ],
+    "expected_benefits": {
+      "mobile_transaction_growth_percent": 30,
+      "branch_transaction_reduction_percent": 20,
+      "operational_cost_reduction_expected": true,
+      "nps_improvement_target": 15,
+      "cross_sell_ratio_increase_percent": 10
+    },
+    "roi_estimate": {
+      "implementation_cost_inr": 85000000,
+      "annual_operational_cost_inr": 25000000,
+      "estimated_annual_savings_inr": 60000000,
+      "payback_period_months": 18
+    }
+  },
+
+  "scope": {
+    "in_scope_features": [
+      "Account Summary",
+      "Savings/Current/OD Account Management",
+      "UPI (Send/Receive/Collect)",
+      "UPI Autopay (e-Mandates)",
+      "UPI Lite / Small Value Payments (if applicable)",
+      "UPI QR Scan & Pay (Static/Dynamic)",
+      "UPI Intent / Deep Link Payments",
+      "Fund Transfer (IMPS, NEFT, RTGS)",
+      "Beneficiary Management (Add/Verify/Limit Controls)",
+      "Bill Payments via BBPS (Electricity, Gas, DTH, Broadband, Water)",
+      "Recharges (Prepaid Mobile/DTH/Fastag)",
+      "FASTag Services (Recharge/Status/Txn History)",
+      "Credit Card Payments",
+      "Loan Management (View/Repay/Foreclosure Requests)",
+      "Fixed Deposit / RD Booking",
+      "Statement Download (PDF) & Email",
+      "Cheque Services (Stop Cheque, Cheque Book Request)",
+      "Card Management (Debit/Credit Card Controls, Limits, International Usage)",
+      "Card Tokenization Support (where applicable)",
+      "eKYC / Video KYC Journey (if onboarding in scope)",
+      "DigiLocker Document Fetch (KYC/Address Proof support)",
+      "Aadhaar/OTP based flows (where legally applicable)",
+      "Profile & Nominee Management",
+      "Secure Messaging / Service Requests",
+      "In-App Notifications & Alerts",
+      "Transaction Alerts (SMS/Email/Push)",
+      "Customer Support Chatbot",
+      "Biometric Login",
+      "Device Binding / Trusted Device Management",
+      "Root/Jailbreak Detection & App Shielding",
+      "AI Fraud Monitoring Alerts",
+      "Dispute / Chargeback Initiation (where applicable)",
+      "Grievance Redressal & Ticketing",
+      "UPI/IMPS/NEFT Transaction Limits & Cooling Period Controls"
+    ],
+    "out_of_scope": [
+      "Core Banking Replacement",
+      "Third-party Super App Integration (Phase 1)"
+    ]
+  },
+
+  "technical_architecture": {
+    "frontend": {
+      "platforms": ["Android", "iOS"],
+      "technology_stack": "Flutter / Native Hybrid",
+      "minimum_supported_versions": {
+        "android": "10+",
+        "ios": "14+"
+      }
+    },
+    "backend": {
+      "architecture": "Microservices",
+      "api_gateway": "Enterprise API Gateway",
+      "integration_pattern": "REST + Kafka Event Streaming",
+      "authentication": "OAuth2 + JWT",
+      "rate_limiting_enabled": true
+    },
+    "core_integrations": [
+      "Core Banking System",
+      "CRM",
+      "AML System",
+      "Fraud Monitoring Engine",
+      "UPI Switch",
+      "IMPS/NEFT/RTGS Rails (Bank/Partner)",
+      "BBPS Aggregator",
+      "SMS Gateway",
+      "Email Gateway"
+    ]
+  },
+
+  "cloud_deployment": {
+    "cloud_provider": "AWS/Azure/GCP",
+    "region": "India",
+    "deployment_model": "Public Cloud with VPC Isolation",
+    "containerization": "Docker + Kubernetes",
+    "availability_model": "Multi-AZ Active-Active",
+    "auto_scaling_enabled": true,
+    "disaster_recovery": {
+      "enabled": true,
+      "secondary_region": "India DR Region",
+      "rpo_minutes": 15,
+      "rto_minutes": 60,
+      "dr_drill_frequency": "Quarterly"
+    }
+  },
+
+  "security_controls": {
+    "data_encryption_at_rest": "AES-256",
+    "data_encryption_in_transit": "TLS 1.3",
+    "hsm_enabled": true,
+    "mobile_app_shielding": true,
+    "root_jailbreak_detection": true,
+    "device_binding_enabled": true,
+    "mfa_enabled": true,
+    "biometric_authentication": true,
+    "secure_coding_standard": "OWASP Mobile Top 10",
+    "penetration_testing_frequency": "Pre-GoLive + Annual"
+  },
+
+  "data_governance": {
+    "data_classification": "Restricted",
+    "data_residency": "India",
+    "retention_years": 10,
+    "consent_capture_enabled": true,
+    "cross_border_transfer": false,
+    "dpdp_compliance": true,
+    "audit_log_retention_years": 10
+  },
+
+  "regulatory_compliance": {
+    "rbi_guidelines_compliance": true,
+    "it_act_compliance": true,
+    "pci_dss_required": true,
+    "aadhaar_regulation_applicable": true,
+    "iso_27001_alignment": true,
+    "annual_compliance_audit_required": true
+  },
+
+  "it_general_controls": {
+    "rbac_enabled": true,
+    "mfa_for_admin": true,
+    "privileged_access_review_frequency": "Quarterly",
+    "change_management_pipeline": "Dev → SIT → UAT → Prod",
+    "mandatory_code_review": true,
+    "rollback_plan_defined": true,
+    "daily_backup": true,
+    "quarterly_dr_test": true,
+    "segregation_of_duties_enforced": true
+  },
+
+  "risk_assessment": {
+    "key_risks": [
+      "Cybersecurity Threat",
+      "Data Breach",
+      "Fraud Exploitation",
+      "High Transaction Load Failure",
+      "Regulatory Non-Compliance"
+    ],
+    "risk_mitigation_plan": [
+      "24/7 SOC Monitoring",
+      "AI-Based Fraud Detection",
+      "Rate Limiting",
+      "Periodic VAPT",
+      "Compliance Audit"
+    ]
+  },
+
+  "testing_strategy": {
+    "unit_testing": true,
+    "integration_testing": true,
+    "uat_required": true,
+    "performance_testing": {
+      "expected_peak_tps": 5000,
+      "load_testing_required": true
+    },
+    "security_testing": {
+      "vapt_required": true,
+      "mobile_app_security_testing": true
+    }
+  },
+
+  "ai_and_automation": {
+    "chatbot_enabled": true,
+    "fraud_detection_ai": true,
+    "behavioral_biometrics": true,
+    "transaction_anomaly_detection": true,
+    "future_scope": "Context-Aware Banking Agent Platform"
+  },
+
+  "project_governance": {
+    "steering_committee_required": true,
+    "monthly_status_reporting": true,
+    "milestone_reviews": [
+      "Design Signoff",
+      "Security Clearance",
+      "UAT Signoff",
+      "Go-Live Approval"
+    ]
+  },
+
+  "budget_approval": {
+    "capex_required": true,
+    "opex_required": true,
+    "finance_approval_status": "Pending"
+  }
+}

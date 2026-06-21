@@ -1,0 +1,15 @@
+CIRCULAR: Information Security & Outsourcing Controls (Example)
+
+1. Third-party / outsourcing engagements that process customer or confidential data must have:
+   - Signed contract with security obligations, audit rights, and breach notification SLAs.
+   - Data Processing Addendum when personal data is processed.
+   - Defined sub-processor approval and disclosure.
+
+2. Cloud hosting requires:
+   - Documented data residency evaluation.
+   - Encryption of data at rest and in transit.
+   - IAM controls using least privilege and MFA.
+
+3. Penetration testing:
+   - Must be completed prior to go-live for internet-exposed applications.
+   - Remediation must be tracked with evidence.

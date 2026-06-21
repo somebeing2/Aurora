@@ -1,0 +1,10 @@
+POLICY: AML/KYC Systems Change Standard (Example)
+
+1. Any change impacting KYC capture, screening, transaction monitoring, or onboarding approvals must:
+   - Be reviewed by Financial Crime Compliance.
+   - Maintain audit trails for decisions and overrides.
+   - Not reduce detection coverage without documented compensating controls.
+
+2. Vendor solutions used in KYC flows require:
+   - Model validation where automated decisioning is used.
+   - Ongoing monitoring for false positives/negatives.
